@@ -37,10 +37,7 @@ statement
     | EXPLAIN (ANALYZE)? statement                                                   #explain
     | OPTIMIZE TABLE tableWithPartitions withProperties?                             #optimize
     | REFRESH TABLE tableWithPartitions                                              #refreshTable
-    | UPDATE aliasedRelation
-        SET assignment (',' assignment)*
-        where?
-        returning?      								                             #update
+    | UPDATE aliasedRelation SET assignment (',' assignment)* where? returning?      #update
     | DELETE FROM aliasedRelation where?                                             #delete
     | SHOW (TRANSACTION ISOLATION LEVEL | TRANSACTION_ISOLATION)                     #showTransaction
     | SHOW CREATE TABLE table                                                        #showCreateTable
